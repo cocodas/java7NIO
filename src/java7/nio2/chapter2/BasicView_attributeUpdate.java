@@ -15,6 +15,7 @@ public class BasicView_attributeUpdate {
 		long time = System.currentTimeMillis();
 		FileTime fileTime = FileTime.fromMillis(time);
 		
+		
 		//setTime();
 		try {
 			Files.getFileAttributeView(path, BasicFileAttributeView.class).setTimes(fileTime, fileTime, fileTime);
