@@ -9,7 +9,7 @@ public class BasicView_readAttributes {
 
 	public static void main(String[] args) {
 		BasicFileAttributes attr = null;
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		
 		try {
 			attr = Files.readAttributes(path, BasicFileAttributes.class);
@@ -26,6 +26,7 @@ public class BasicView_readAttributes {
 		System.out.println("일반 파일인가 ? : " + attr.isRegularFile());
 		System.out.println("심볼 링크인가 ? : " + attr.isSymbolicLink());
 		System.out.println("그 외의 것인가 ? : " + attr.isOther());
+		System.out.println("fileKey ? : " + attr.fileKey());
 	}
 
 }

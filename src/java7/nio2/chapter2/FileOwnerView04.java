@@ -9,7 +9,7 @@ import java.nio.file.attribute.FileOwnerAttributeView;
 public class FileOwnerView04 {
 
 	public static void main(String[] args) {
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		FileOwnerAttributeView foav = Files.getFileAttributeView(path, FileOwnerAttributeView.class);
 		
 		try {

@@ -10,7 +10,7 @@ import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 
 public class BasicView_attributeUpdate {
 	public static void main(String[] args) {
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		
 		long time = System.currentTimeMillis();
 		FileTime fileTime = FileTime.fromMillis(time);
@@ -52,12 +52,6 @@ public class BasicView_attributeUpdate {
 		} catch (IOException e) {
 			System.err.println(e);
 		}
-		
-		
-		
-		
-		
-		
 		
 	}
 
