@@ -1,4 +1,4 @@
-package java7_NIO2_chapter2;
+package java7.nio2.chapter2;
 
 import java.io.IOException;
 import java.nio.file.Files;

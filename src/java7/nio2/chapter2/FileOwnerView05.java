@@ -1,22 +1,25 @@
-package java7_NIO2_chapter2;
+package java7.nio2.chapter2;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.UserPrincipal;
 
-public class BasicView_getAttribute {
+import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
+
+public class FileOwnerView05 {
 
 	public static void main(String[] args) {
 		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
-		
-		//getAttribute 메서드 : 단일 속성을 알아내고 싶을때.
 		try {
-			long size = (Long)Files.getAttribute(path, "basic:size");
-			System.out.println("Size : " + size);
+			UserPrincipal owner = (UserPrincipal)Files.getAttribute(path, "owner:owner", NOFOLLOW_LINKS);
+			
+			System.out.println(owner.getName());
 		} catch (IOException e) {
 			System.err.println(e);
 		}
+		
 	}
 
 }
