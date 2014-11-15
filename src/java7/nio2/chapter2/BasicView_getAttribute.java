@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 public class BasicView_getAttribute {
 
 	public static void main(String[] args) {
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		
 		//getAttribute 메서드 : 단일 속성을 알아내고 싶을때.
 		try {

@@ -11,7 +11,7 @@ public class FileOwnerView02 {
 
 	public static void main(String[] args) {
 		UserPrincipal owner = null;
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		FileOwnerAttributeView foav = Files.getFileAttributeView(path, FileOwnerAttributeView.class);
 		
 		try {

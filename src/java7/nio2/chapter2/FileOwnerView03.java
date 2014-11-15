@@ -5,13 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.UserPrincipal;
+
 import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 
 public class FileOwnerView03 {
 
 	public static void main(String[] args) {
 		UserPrincipal owner = null;
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		
 		try {
 			owner = path.getFileSystem().getUserPrincipalLookupService().lookupPrincipalByName("administrator");

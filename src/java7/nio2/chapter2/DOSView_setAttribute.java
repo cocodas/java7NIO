@@ -12,7 +12,7 @@ public class DOSView_setAttribute {
 
 	public static void main(String[] args) {
 		DosFileAttributes attr = null;
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		try {
 			attr = Files.readAttributes(path, DosFileAttributes.class);
 		} catch (IOException e1) {

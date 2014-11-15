@@ -11,14 +11,16 @@ public class FileOwnerView01 {
 	public static void main(String[] args) {
 		//파일 소유자 설정
 		UserPrincipal owner = null;
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		
 		try {
 			owner = path.getFileSystem().getUserPrincipalLookupService().lookupPrincipalByName("administrator");
-			Files.setOwner(path, owner);
+			Path pathOwner = Files.setOwner(path, owner);
+			System.out.println("pathOwner: " + pathOwner.toString());
 		} catch (IOException e) {
 			System.err.print(e);
 		}
+		System.out.println("파일 소유자: " + owner.getName());
 	}
 
 }

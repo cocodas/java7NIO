@@ -11,7 +11,7 @@ import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 public class FileOwnerView05 {
 
 	public static void main(String[] args) {
-		Path path = Paths.get("C:/Users/Administrator/Downloads/Button.txt");
+		Path path = Paths.get(System.getProperty("user.home"), "Downloads", "dojo.pdf");
 		try {
 			UserPrincipal owner = (UserPrincipal)Files.getAttribute(path, "owner:owner", NOFOLLOW_LINKS);
 			
