@@ -11,7 +11,7 @@ public class SearchMain {
 
 	public static void main(String[] args) throws IOException{
 		
-		String words = "요즘 제가 Java예제를 정리한 Java1000제를 집필하고 있는데요. Java의 정석에 연습문제가 있었으면 좋겠다는 독자분들의 요청을 많이 받았습니다. 그래서 Java1000제의 일부를 연습문제로 만들어서 추가한 Java의 정석 2판을 펴내게 되었습니다.";
+		String words = "All rights reserved. No part of this work may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, or by any information storage or retrieval system, without the prior written permission of the copyright owner and the publisher.";
 		Search walk = new Search(words);
 		EnumSet option = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
 		

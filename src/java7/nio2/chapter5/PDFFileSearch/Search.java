@@ -11,6 +11,8 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import javax.management.loading.PrivateClassLoader;
+
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -50,8 +52,10 @@ public class Search implements FileVisitor {
 			found = searchInPDF_iText(file.toString());
 			if (!found) {
 				found = searchInPDF_PDFBox(file.toString());
-			}
-			
+			}			
+		}
+		if (found) {
+			documents.add(file.toString());
 		}
 	}
 	
@@ -68,7 +72,7 @@ public class Search implements FileVisitor {
 				for (int i = 0; i <= n; i++) {
 					String str = PdfTextExtractor.getTextFromPage(reader, i);
 					
-					flag = searchInPDF_iText(str);
+					flag = searchText(str);
 					if (flag) {
 						break OUTERMOST;
 					}
@@ -110,7 +114,7 @@ public class Search implements FileVisitor {
 					pdfStripper.setEndPage(page + 1);
 					parsedText = pdfStripper.getText(pdDoc);
 					
-					flag = searchInPDF_iText(parsedText);
+					flag = searchText(parsedText);
 					if (flag) {
 						break OUTERMOST;
 					}
@@ -133,7 +137,16 @@ public class Search implements FileVisitor {
 		}
 	}
 	
-
+	private boolean searchText(String text){
+		boolean flag = false;
+		for (int i = 0; i < wordsarray.size(); i++) {
+			if ((text.toLowerCase()).contains(wordsarray.get(i).toLowerCase())) {
+				flag = true;
+				break;
+			}
+		}
+		return flag;
+	}
 
 	
 	
