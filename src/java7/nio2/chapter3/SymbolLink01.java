@@ -9,8 +9,8 @@ public class SymbolLink01 {
 
 	public static void main(String[] args) {
 		//심볼 링크 생성 하기
-		Path link = FileSystems.getDefault().getPath("rafael.nadal.1");//getPath(path);
-		Path target = FileSystems.getDefault().getPath(System.getProperty("user.home"), "Downloads", "nature.txt");
+		Path link = FileSystems.getDefault().getPath("rafael.nadal.11");//getPath(path);
+		Path target = FileSystems.getDefault().getPath(System.getProperty("user.home"), "Downloads", "Button.txt");
 		
 		try {
 			Files.createSymbolicLink(link, target);

@@ -17,7 +17,6 @@ public class UserDefinedFileAttributeView02 {
 		try {
 			int written = udfav.write("file.description", Charset.defaultCharset().encode("이 파일은 개인적인 정보가 포함되어 있습니다."));
 			//CharSet class : atBugLevel(), checkName(), CharsetProvider(), Iterator providers()......
-			
 
 		} catch (IOException e) {
 			System.err.println(e);
