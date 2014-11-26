@@ -1,4 +1,4 @@
-package java7.nio2.moveTree;
+package java7.nio2.chapter5.moveTree;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

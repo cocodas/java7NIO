@@ -1,4 +1,4 @@
-package java7.nio2.copyTree;
+package java7.nio2.chapter5.copyTree;
 
 import java.io.IOException;
 import java.nio.file.FileVisitOption;
