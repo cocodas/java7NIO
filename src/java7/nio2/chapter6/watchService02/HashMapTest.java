@@ -9,7 +9,7 @@ public class HashMapTest {
 
 	public static void main(String[] args) {
 		//hashTable 기본할당 공간 11 hashMap 기본할당공간 16
-		//단이 Thread환경에서 hashTable에 비해 엄청나게 속도가 빠르다
+		//단일 Thread환경에서 hashTable에 비해 엄청나게 속도가 빠르다
 		System.out.println(" ---- 테스트 시작 ---- ");
 		
 		HashMap hm = new HashMap();
